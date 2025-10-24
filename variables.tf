@@ -96,3 +96,17 @@ variable "route_table_tags_database" {
     type               = "database"
   }
 }
+
+variable "eip_tags" {
+  default = {
+    added_domain_as_vpc = true
+  }
+}
+
+variable "nat_tags" {
+  default = {
+    allocation_id                               = "passed"
+    subnet_id_of_first_Element_of_public_subnet = "passed"
+    depends_on                                  = "passed"
+  }
+}

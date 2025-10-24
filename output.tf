@@ -43,3 +43,7 @@ output "availabile_zones" {
 #           + "use1-az5",
 #         ]
 #     }
+
+output "eip-public-IP" {
+  value = module.vpc.eip_public_ip
+}
