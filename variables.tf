@@ -10,6 +10,25 @@ variable "project" {
   type = string
   default = "roboshop"
 }
+
+#CIDR - loop creation 
+variable "public-subnet-cidr-block" {
+  type = list
+  default = ["10.0.1.0/24", "10.0.2.0/24"]
+  
+}
+
+variable "database-subnet-cidr-block" {
+  type = list
+  default = ["10.0.11.0/24", "10.0.12.0/24"]
+  
+}
+
+variable "private-subnet-cidr-block" {
+  type = list
+  default = ["10.0.21.0/24", "10.0.22.0/24"]
+  
+}
 variable "vpc_tags" {
   default = {
     enable_dns_hostnames = "added in module"
@@ -21,5 +40,35 @@ variable "igw_tags" {
   default = {
     added_ref_to_VpcId = true
     Terraform_User= true
+  }
+}
+
+variable "public_subnet_tags" {
+  default = {
+    availability_zone = "added by slicing the output received from data sourcing - aws_availability_zones"
+    Terraform_User = true
+    map_public_ip_on_launch = true
+    subnet= "public"
+
+  }
+}
+
+variable "private_subnet_tags" {
+  default = {
+    availability_zone = "added by slicing the output received from data sourcing - aws_availability_zones"
+    Terraform_User = true
+    map_public_ip_on_launch = false
+    subnet= "private"
+
+  }
+}
+
+variable "database_subnet_tags" {
+  default = {
+    availability_zone = "added by slicing the output received from data sourcing - aws_availability_zones"
+    Terraform_User = true
+    map_public_ip_on_launch = false
+    subnet= "database"
+
   }
 }
