@@ -5,5 +5,5 @@ module "vpc" {
   environment = var.environment
   project     = var.project
   vpc_tags = var.vpc_tags
-
+igw_tags = var.igw_tags
 }

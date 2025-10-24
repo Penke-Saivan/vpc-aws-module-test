@@ -16,3 +16,10 @@ variable "vpc_tags" {
     Terraform_User= true
   }
 }
+
+variable "igw_tags" {
+  default = {
+    added_ref_to_VpcId = true
+    Terraform_User= true
+  }
+}
