@@ -47,3 +47,35 @@ output "availabile_zones" {
 output "eip-public-IP" {
   value = module.vpc.eip_public_ip
 }
+
+output "vpc-default"{
+  value = module.vpc.default-vpc-id
+}
+
+# {
+#       + arn                                  = "arn:aws:ec2:us-east-1:131676642204:vpc/vpc-00c32ae89ad378adf"
+#       + cidr_block                           = "172.31.0.0/16"
+#       + cidr_block_associations              = [
+#           + {
+#               + association_id = "vpc-cidr-assoc-0114433282029ce33"
+#               + cidr_block     = "172.31.0.0/16"
+#               + state          = "associated"
+#             },
+#         ]
+#       + default                              = true
+#       + dhcp_options_id                      = "dopt-0a6ed4b077212f8b5"
+#       + enable_dns_hostnames                 = true
+#       + enable_dns_support                   = true
+#       + enable_network_address_usage_metrics = false
+#       + filter                               = null
+#       + id                                   = "vpc-00c32ae89ad378adf"
+#       + instance_tenancy                     = "default"
+#       + ipv6_association_id                  = ""
+#       + ipv6_cidr_block                      = ""
+#       + main_route_table_id                  = "rtb-042de75ce78f1fdb4"
+#       + owner_id                             = "131676642204"
+#       + region                               = "us-east-1"
+#       + state                                = null
+#       + tags                                 = {}
+#       + timeouts                             = null
+#     }
