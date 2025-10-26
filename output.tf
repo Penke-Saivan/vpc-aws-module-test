@@ -2,7 +2,7 @@ output "id_vpc" {
   value = module.vpc.vpc_id
 }
 output "availabile_zones" {
-  value = slice(data.aws_availability_zones.availables.names,0,2)
+  value = slice(data.aws_availability_zones.availables.names, 0, 2)
   # slicing- slice(list, startindex, endindex)
 
   # value = data.aws_availability_zones.availables.names
@@ -48,7 +48,7 @@ output "eip-public-IP" {
   value = module.vpc.eip_public_ip
 }
 
-output "vpc-default"{
+output "vpc-default" {
   value = module.vpc.default-vpc-id
 }
 
@@ -79,3 +79,25 @@ output "vpc-default"{
 #       + tags                                 = {}
 #       + timeouts                             = null
 #     }
+
+output "public_subnet_ids" {
+  value = module.vpc.public_subnet_ids
+}
+# Gives a list
+# + public_subnet_ids   = [
+#     + (known after apply),
+#     + (known after apply),
+#   ]
+
+# [
+#   "subnet-0639945cbf07b3d5a",
+#   "subnet-04f217a7a7d2b60d8",
+# ]
+
+output "private_subnet_ids" {
+  value = module.vpc.private_subnet_ids
+}
+
+output "database_subnet_ids" {
+  value = module.vpc.database_subnet_ids
+}

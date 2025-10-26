@@ -110,3 +110,13 @@ variable "nat_tags" {
     depends_on                                  = "passed"
   }
 }
+variable "is_peering_required" {
+  type    = bool
+  default = true
+}
+
+#   -upgrade                Install the latest module and provider versions
+#                           allowed within configured constraints, overriding the
+#                           default behavior of selecting exactly the version
+#                           recorded in the dependency lockfile.
+# terraform init --help --> when changes the source from local to github repo
